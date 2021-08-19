@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>MY PORTFOLIO</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+    <script>
+        let Userinput = [];
+        const adduserinput = (ev)=>{
+            ev.preventDefault();  //to stop the form submitting
+            let userinput = {
+                FULLNAME: document.getElementById('fullname').value,
+                EMAIL: document.getElementById('email').value,
+                MESSAGE: document.getElementById('message').value
+            }
+            Userinput.push(userinput);
+            document.forms[0].reset(); // to clear the form for the next entries
+
+            console.warn('added' , {Userinput} );
+
+            //saving to localStorage
+            localStorage.setItem('USER-DATA', JSON.stringify(Userinput) );
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('bttn').addEventListener('click', adduserinput);
+        });
+    </script>
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="#">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" href="#home">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home" onclick="togglemenu();">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about" onclick="togglemenu();">About Us </span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Work" onclick="togglemenu();">My Work </span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Our Service
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#webdesign">Web Design</a>
+                        <a class="dropdown-item" href="#webdevelopment">Web Developmenmt</a>
+                        <a class="dropdown-item" href="#androidapp">Android App</a>
+                        <a class="dropdown-item" href="#photography">Photography</a>
+                        <a class="dropdown-item" href="#webhosting">Web Hosting</a>
+                        <a class="dropdown-item" href="#videoediting">Video Editing</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#Contact">Contact Us</a>
+                    </div>
+                </li>
+            </ul>
+                <!-- <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li> -->
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+            
+        </div>
+    </nav>
+
+
+
+
+    <section class="banner" id="home" style="background-image: url(banner.jpg);">
+        <div class="textBx">
+            <h2>HELLO ,i 'm <br><span>Heamm Vandra</span></h2>
+            <h3>i am a engenier</h3>
+            <a href="#about" class="btn">About mee</a>
+        </div>
+    </section>
+
+    <section class="About" id="about">
+        <div class="heading">
+            <h2>About Me </h2>
+        </div>
+        <div class="content">
+            <div class="contentBx">
+                <h3> ~TWO LIFE BABYY!!~<h3>
+                        <p><h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, quam! Quos blanditiis
+                            dicta tempore culpa provident dolor sunt nam cum quia ducimus veniam aliquid vero, sapiente,
+                            aut expedita atque corrupti.<br>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Nam eum, velit voluptatibus at culpa placeat minus nemo, repellat nobis molestiae
+                            repellendus suscipit dolor optio eius non officia eveniet sint iure.</h5>
+                        </p>
+            </div>
+        </div>
+        <div class="w50">
+            <img src="img1.jpg" class="img" >
+            <img src="coding.jpg" class="img" >
+        </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="Services" id="Services">
+        <div class="heading white">
+            <h2>Our servicies </h2>
+            <p>
+                Lorem ipsum dolor perferendis omnis nulla quis. Dignissimos, blanditiis non? Iste reprehenderit est
+            </p>
+        </div>
+        <div class="content">
+            <div class="servicesBx" id="webdesign">
+                <img src="icon1 (1).png">
+                <h2>Web Design </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quam quibusdam non cumque
+                    voluptatem assumenda asperiores nulla. Voluptatibus corrupti tempora modi facilis ipsum
+                    adipisci! Quibusdam quia ullam dolorem sapiente repudiandae.</p>
+
+            </div>
+            <div class="servicesBx" id="webdevelopment">
+                <img src="icon2.png">
+                <h2>Web Devlopment </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quam quibusdam non cumque
+                    voluptatem assumenda asperiores nulla. Voluptatibus corrupti tempora modi facilis ipsum
+                    adipisci! Quibusdam quia ullam dolorem sapiente repudiandae.</p>
+            </div>
+            <div class="servicesBx" id="androidapp">
+                <img src="icon3.png">
+                <h2>Android App </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quam quibusdam non cumque
+                    voluptatem assumenda asperiores nulla. Voluptatibus corrupti tempora modi facilis ipsum
+                    adipisci! Quibusdam quia ullam dolorem sapiente repudiandae.</p>
+            </div>
+            <div class="servicesBx" id="photography">
+                <img src="icon4.png">
+                <h2>Photography </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quam quibusdam non cumque
+                    voluptatem assumenda asperiores nulla. Voluptatibus corrupti tempora modi facilis ipsum
+                    adipisci! Quibusdam quia ullam dolorem sapiente repudiandae.</p>
+            </div>
+            <div class="servicesBx" id="webhosting">
+                <img src="icon5.png">
+                <h2>Web Hosting </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quam quibusdam non cumque
+                    voluptatem assumenda asperiores nulla. Voluptatibus corrupti tempora modi facilis ipsum
+                    adipisci! Quibusdam quia ullam dolorem sapiente repudiandae.</p>
+            </div>
+            <div class="servicesBx" id="videoeditting">
+                <img src="icon6.png">
+                <h2>Video Editting </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quam quibusdam non cumque
+                    voluptatem assumenda asperiores nulla. Voluptatibus corrupti tempora modi facilis ipsum
+                    adipisci! Quibusdam quia ullam dolorem sapiente repudiandae.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="Work" id="Work">
+        <div class="heading">
+            <h2>Our Latest work </h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit<br>. Nostrum sequi nam exercitationem
+            </p>
+        </div>
+        <div class="content">
+            <div class="workBx">
+                <img src="product1.jpg.jpg">
+            </div>
+
+            <div class="workBx">
+                <img src="product2.jpg.jpg">
+            </div>
+
+            <div class="workBx">
+                <img src="product3.jpg.jpg">
+            </div>
+
+            <div class="workBx">
+                <img src="product4.jpg.jpg">
+            </div>
+        </div>
+        <div class="heading">
+            <a href="#" class="btn">View more</a>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="Contact" id="Contact">
+        <div class="heading white">
+            <h2>Contact Us</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit<br>. Nostrum sequi nam exercitationem
+                nesciunt
+                cupiditate, maxime perferendis omnis nulla quis. Dignissimos, blanditiis non? Iste reprehenderit est
+            </p>
+        </div>
+        <div class="content">
+            <div class="ContactInfo">
+                <!-- <h3>Contant Info</h3> -->
+                <div class="ContactInfoBx">
+                    <div class="box">
+                        <div class="text" id="address">
+                            <h3>Address</h3>
+                            <P>kd heights,reni sati marg,malad east,mumbai 400097</P>
+                        </div>
+                        <div class="box">
+                            <div class="icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+
+                            <div class="text">
+                                <h3>Phone</h3>
+                                <P>8424805228</P>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="icon">
+                                <i class="fa fa-envelope-o"></i>
+                            </div>
+
+                            <div class="text">
+                                <h3>Email</h3>
+                                <P>Heamvandra123@rocketmail.com</P>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formBx">
+                    <form>
+                        <h3>Message Me </h3>
+                        <input type="text" id="fullname" placeholder="Full name">
+                        <input type="email" id="email" placeholder="Email">
+                        <textarea id="message" placeholder="Your Message"></textarea>
+                        <a class="btn" id="bttn">Submit Info</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+</body>
+
+</html>
